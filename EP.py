@@ -7,10 +7,14 @@ Created on Tue Apr 17 18:26:32 2018
 """
 
 #========= fazendo o menu =========
-
+import json
 escolha = 1
-estoque = {}
-
+#estoquestr=
+#if estoquestr[0]=='{':
+#    estoque = json.loads(estoquestr)
+#else:
+#    estoque={}
+estoque={}
 while 5 > escolha > 0:
     print ("Controle do Estoque:")
     print ("0 - sair ")
@@ -44,9 +48,11 @@ while 5 > escolha > 0:
     elif escolha == 4:
         #copia_estoque = estoque.split(',')
         print (estoque.split(','))
-
 if escolha == 0:
+    estoquestr=json.dump(estoque)
     print ("Até mais")
+
+    
     
     
     
