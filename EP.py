@@ -22,19 +22,20 @@ while 5 > escolha > 0:
    print ("4 - imprimir estoque")
    escolha = int(input("Faça sua escolha: "))
    if escolha == 1:
+       #incluir print pra quando o item já for exixtente
        produto = input("Nome do produto: ")
        quantidade_inicial = int(input("Quantidade inicial: "))
        estoque[produto]=quantidade_inicial
        if quantidade_inicial < 0:
            print ("A quantidade inicial não pode ser negativa.")
            quantidade_inicial = int(input("Quantidade inicial: "))
-    elif escolha ==2:
+   elif escolha ==2:
         produto = input ("Nome do produto a ser removido: ")
         if produto not in estoque:
             print ("Elemento não encontrado")
         elif produto in estoque:
             del estoque[produto]
-    elif escolha == 3:
+   elif escolha == 3:
         produto = input ("Nome do produto que deseja alterar: ")
         if produto not in estoque:
             print ("Elemento não encontrado")
@@ -43,7 +44,7 @@ while 5 > escolha > 0:
             estoque[produto]+=quantidade
             print ('Novo estoque de {0}: {1}'.format(produto, estoque[produto]))
                 # ver o que tem de errado nessa linha de cima
-    elif escolha == 4:
+   elif escolha == 4:
             #copia_estoque = estoque.split(',')
         print (estoque.split(','))
 if escolha == 0:
