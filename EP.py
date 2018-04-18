@@ -11,7 +11,7 @@ import json
 with open ('estoque_python.json', 'r') as arquivo:
     estoque=arquivo.read()    
 if len(estoque)==0:
-    estoque={}
+    estoque={}  
 else:
     estoque=json.loads(estoque)
     print ("Controle do Estoque:")
