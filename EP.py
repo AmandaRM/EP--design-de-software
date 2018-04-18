@@ -10,7 +10,6 @@ Created on Tue Apr 17 18:26:32 2018
 import json
 with open ('estoque_python.txt', 'r') as arquivo:
     estoque=arquivo.read()
-    
     estoque=json.loads(estoque)
 escolha=1
 while 5 > escolha > 0:
@@ -48,9 +47,9 @@ while 5 > escolha > 0:
             #copia_estoque = estoque.split(',')
         print (estoque.split(','))
 if escolha == 0:
-    estoquestr=json.dump(estoque)
+    estoquestr=json.dumps(estoque, sortkeys=True, ident = 4 )
     print ("Até mais")
-with open ('estoque_python.json', 'w') as arquivo:
+with open ('estoque_python.txt', 'w') as arquivo:
     arquivo.write(estoquestr)
     
     
