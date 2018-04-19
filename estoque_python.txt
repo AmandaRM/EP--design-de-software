@@ -1,11 +1,10 @@
 {
-    "abacaxi": {
-        "quantidade": 5
-    },
     "banana": {
-        "quantidade": 3
+        "preco_unitario": 2.3,
+        "quantidade": 2
     },
-    "f": {
+    "tomato": {
+        "preco_unitario": 0.95,
         "quantidade": 3
     }
 }
