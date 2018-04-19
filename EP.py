@@ -20,13 +20,16 @@ while 5 > escolha > 0:
    print ("4 - imprimir estoque")
    escolha = int(input("Faça sua escolha: "))
    if escolha == 1:
-       #incluir print pra quando o item já for exixtente
        produto = input("Nome do produto: ")
-       quantidade_inicial = int(input("Quantidade inicial: "))
-       estoque[produto]=quantidade_inicial
-       if quantidade_inicial < 0:
-           print ("A quantidade inicial não pode ser negativa.")
+       if produto in estoque:
+           print ("item já existente.")
+           print (" ")
+       else:
            quantidade_inicial = int(input("Quantidade inicial: "))
+           estoque[produto]=quantidade_inicial
+           if quantidade_inicial < 0:
+               print ("A quantidade inicial não pode ser negativa.")
+               quantidade_inicial = int(input("Quantidade inicial: "))
    elif escolha ==2:
         produto = input ("Nome do produto a ser removido: ")
         if produto not in estoque:
