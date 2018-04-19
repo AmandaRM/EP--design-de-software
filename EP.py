@@ -9,8 +9,7 @@ Created on Tue Apr 17 18:26:32 2018
 #========= fazendo o menu =========
 import json
 with open ('estoque_python.txt', 'r') as arquivo:
-    estoque=arquivo.read()
-    estoque=json.loads(estoque)
+    estoque=json.loads(arquivo.read())
 escolha=1
 while 5 > escolha > 0:
    print ("Controle do Estoque:")
@@ -45,10 +44,10 @@ while 5 > escolha > 0:
    elif escolha == 4:
        print (estoque) # ver se da para imprimir do jeito como fala no pdf
 if escolha == 0:
-    estoquestr=json.dumps(estoque, sortkeys=True, ident = 4 )
     print ("Até mais")
+original = json.dumps(estoque, sort_keys=True, indent=4)
 with open ('estoque_python.txt', 'w') as arquivo:
-    arquivo.write(estoquestr)
+    arquivo.write(original)
     
     
     
