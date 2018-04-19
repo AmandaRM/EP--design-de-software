@@ -42,10 +42,8 @@ while 5 > escolha > 0:
             quantidade = int(input("Quantidade: "))
             estoque[produto]+=quantidade
             print ('Novo estoque de {0}: {1}'.format(produto, estoque[produto]))
-                # ver o que tem de errado nessa linha de cima
    elif escolha == 4:
-            #copia_estoque = estoque.split(',')
-        print (estoque.split(','))
+       print (estoque) # ver se da para imprimir do jeito como fala no pdf
 if escolha == 0:
     estoquestr=json.dumps(estoque, sortkeys=True, ident = 4 )
     print ("Até mais")
