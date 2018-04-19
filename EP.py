@@ -26,7 +26,8 @@ while 5 > escolha > 0:
            print (" ")
        else:
            quantidade_inicial = int(input("Quantidade inicial: "))
-           estoque[produto]=quantidade_inicial
+           estoque[produto]={}
+           estoque[produto]["quantidade"]=quantidade_inicial
            if quantidade_inicial < 0:
                print ("A quantidade inicial não pode ser negativa.")
                quantidade_inicial = int(input("Quantidade inicial: "))
@@ -41,13 +42,13 @@ while 5 > escolha > 0:
         if produto not in estoque:
             print ("Elemento não encontrado")
         elif produto in estoque:
-            quantidade = int(input("Quantidade: "))
-            estoque[produto]+=quantidade
+            quantidadeNova = int(input("Quantidade: "))
+            estoque[produto]["quantidade"]+=quantidadeNova
             print ('Novo estoque de {0}: {1}'.format(produto, estoque[produto]))
    elif escolha == 4:
        print(' ')
        for k in estoque:
-           print ('produto: {0}, quantidade: {1}'.format(k,estoque[k]))
+           print ('produto: {0}, quantidade: {1}'.format(k,estoque[k]["quantidade"]))
        print(' ') 
 if escolha == 0:
     print ("Até mais")

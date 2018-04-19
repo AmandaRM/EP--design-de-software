@@ -1,4 +1,11 @@
 {
-    "banana": 3,
-    "f": 4
+    "abacaxi": {
+        "quantidade": 5
+    },
+    "banana": {
+        "quantidade": 3
+    },
+    "f": {
+        "quantidade": 3
+    }
 }
