@@ -42,7 +42,10 @@ while 5 > escolha > 0:
             estoque[produto]+=quantidade
             print ('Novo estoque de {0}: {1}'.format(produto, estoque[produto]))
    elif escolha == 4:
-       print (estoque) # ver se da para imprimir do jeito como fala no pdf
+       print(' ')
+       for k in estoque:
+           print ('produto: {0}, quantidade: {1}'.format(k,estoque[k]))
+       print(' ') 
 if escolha == 0:
     print ("Até mais")
 original = json.dumps(estoque, sort_keys=True, indent=4)
