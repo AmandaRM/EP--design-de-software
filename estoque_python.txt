@@ -1,7 +1,7 @@
 {
     "banana": {
         "preco_unitario": 2.3,
-        "quantidade": 2
+        "quantidade": -88
     },
     "tomato": {
         "preco_unitario": 0.95,

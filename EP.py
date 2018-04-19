@@ -21,7 +21,7 @@ while 5 > escolha > 0:
    escolha = int(input("Faça sua escolha: "))
    if escolha<0:
        print("Não existe essa opção.")
-       escolha = int(input("Faça sua escolha: "))   
+       escolha = 1 #para se manter no while
    elif escolha == 1:
        produto = input("Nome do produto: ")
        if produto in estoque:
@@ -68,10 +68,27 @@ while 5 > escolha > 0:
         print ('Novo estoque de {0}: {1}'.format(produto, estoque[produto]))
         print (" ")
    elif escolha == 4:
-       print(' ')
-       for k in estoque:
-           print("Estoque: {0}, quantidade: {1}, preço unitário: {2}".format(k, estoque[k]["quantidade"],estoque[k]["preco_unitario"]))
-       print (" ") 
+       print(" ")
+       print ("Tipo de estoque:")
+       print ("a - Estoque total ")
+       print ("b - Apenas os estoques negativos")
+       modalidade=input("Escolha a sua modalidade: ")
+       if modalidade == "a" or modalidade == "A":
+           print(' ')
+           for k in estoque:
+               print("Estoque: {0}, quantidade: {1}, preço unitário: {2}".format(k, estoque[k]["quantidade"],estoque[k]["preco_unitario"]))
+           print (" ") 
+       elif modalidade == "b"or modalidade == "B":
+           lista_negativos =[]
+           for k in estoque:
+               if estoque[k]["quantidade"] < 0:
+                   lista_negativos.append([k,estoque[k]["quantidade"]])
+                   print(" ")
+                   print ("Os estoques negativos são:")
+                   for i in range(len(lista_negativos)):
+                       print ("Produto: {0}, Quantidade: {1}".format(lista_negativos[i][0], lista_negativos[i][1]))
+                   print(" ")
+            #colocar um print para quando não houver estoque negativo
 if escolha == 0:
     print("Até mais")
 original = json.dumps(estoque, sort_keys=True, indent=4)
