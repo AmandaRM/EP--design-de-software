@@ -19,10 +19,7 @@ while 5 > escolha > 0:
    print ("3 - alterar item")
    print ("4 - imprimir estoque")
    escolha = int(input("Faça sua escolha: "))
-   if escolha<0 :
-       print("Não existe essa opção.")
-       escolha = 1 #para se manter no while
-   elif escolha == 1:
+   if escolha == 1:
        produto = input("Nome do produto: ")
        if produto in estoque:
            print ("item já existente.")
@@ -105,6 +102,9 @@ while 5 > escolha > 0:
            contador=round(contador,2)
            print ("O valor monetário total em estoque é: {0}".format(contador))
            print(" ")
+       else: #incluir opção para quando o usuario dá enter sem ter numero  (evitar erro)
+           print("Não existe essa opção.")
+           escolha = 1 #para se manter no while
 if escolha == 0:
     print("Até mais")
 original = json.dumps(estoque, sort_keys=True, indent=4)
