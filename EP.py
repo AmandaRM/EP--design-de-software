@@ -72,6 +72,7 @@ while 5 > escolha > 0:
        print ("Tipo de estoque:")
        print ("a - Estoque total ")
        print ("b - Apenas os estoques negativos")
+       print ("c - Valor monetário em estoque")
        modalidade=input("Escolha a sua modalidade: ")
        if modalidade == "a" or modalidade == "A":
            print(' ')
@@ -89,6 +90,14 @@ while 5 > escolha > 0:
                        print ("Produto: {0}, Quantidade: {1}".format(lista_negativos[i][0], lista_negativos[i][1]))
                    print(" ")
             #colocar um print para quando não houver estoque negativo
+       elif modalidade == "c" or modalidade =="C":
+           contador = 0
+           for k in estoque:
+               if estoque[k]["quantidade"]>0:
+                   contador+=estoque[k]["quantidade"]*estoque[k]["preco_unitario"]
+                   #o total deu um float com varias casas decimais: como mudar isso?
+           print ("O valor monetário total em estoque é: {0}".format(contador))
+           print(" ")
 if escolha == 0:
     print("Até mais")
 original = json.dumps(estoque, sort_keys=True, indent=4)
