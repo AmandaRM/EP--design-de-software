@@ -98,13 +98,12 @@ while 5 > escolha > 0:
            for k in estoque:
                if estoque[k]["quantidade"]>0:
                    contador+=estoque[k]["quantidade"]*estoque[k]["preco_unitario"]
-                   #o total deu um float com varias casas decimais: como mudar isso?
            contador=round(contador,2)
            print ("O valor monetário total em estoque é: {0}".format(contador))
            print(" ")
-       else: #incluir opção para quando o usuario dá enter sem ter numero  (evitar erro)
-           print("Não existe essa opção.")
-           escolha = 1 #para se manter no while
+   else: #incluir opção para quando o usuario dá enter sem ter numero  (evitar erro)
+        print("Não existe essa opção.")
+        escolha = 1 #para se manter no while
 if escolha == 0:
     print("Até mais")
 original = json.dumps(estoque, sort_keys=True, indent=4)
