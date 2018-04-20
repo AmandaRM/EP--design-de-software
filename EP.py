@@ -19,7 +19,7 @@ while 5 > escolha > 0:
    print ("3 - alterar item")
    print ("4 - imprimir estoque")
    escolha = int(input("Faça sua escolha: "))
-   if escolha<0:
+   if escolha<0 :
        print("Não existe essa opção.")
        escolha = 1 #para se manter no while
    elif escolha == 1:
@@ -47,26 +47,29 @@ while 5 > escolha > 0:
             del estoque[produto]
    elif escolha == 3:
         produto = input ("Nome do produto que deseja alterar: ")
-        print ("Tipo de alteração:")
-        print ("a - Quantidade ")
-        print ("b - Preço unitário")
-        alteracao=input("Escolha a sua alteração: ")
-        if produto not in estoque:
-            print ("Elemento não encontrado")
-        elif produto in estoque:
-            if alteracao == "a" or alteracao == "A":
-                quantidadeNova = int(input("Nova quantidade: "))
-                estoque[produto]["quantidade"]+=quantidadeNova
-            elif alteracao == "b" or alteracao =="B":
-                preco_novo = float(input("Novo preço unitário: "))
-                if preco_novo > 0:
-                    estoque[produto]["preco_unitario"]+=preco_novo
+        if produto in estoque:
+            print ("Tipo de alteração:")
+            print ("a - Quantidade ")
+            print ("b - Preço unitário")
+            alteracao=input("\nEscolha a sua alteração: ")
+            if produto not in estoque:
+                print ("Elemento não encontrado")
+            elif produto in estoque:
+                if alteracao == "a" or alteracao == "A":
+                    quantidadeNova = int(input("Inclua quantidade: "))
+                    estoque[produto]["quantidade"]+=quantidadeNova
+                elif alteracao == "b" or alteracao =="B":
+                    preco_novo = float(input("Novo preço unitário: "))
+                    if preco_novo > 0:
+                        estoque[produto]["preco_unitario"]+=preco_novo
+                    else:
+                        print ("Preço unitário não pode ser negativo.")
                 else:
-                    print ("Preço unitário não pode ser negativo.")
-            else:
-                print ("opção indisponível")
-        print ('Novo estoque de {0}: {1}'.format(produto, estoque[produto]))
-        print (" ")
+                    print ("opção indisponível")
+            print ('Novo estoque de {0}: {1}'.format(produto, estoque[produto]))
+            print (" ")
+        else:
+            print("\nProduto não incluso no estoque\n")
    elif escolha == 4:
        print(" ")
        print ("Tipo de estoque:")
@@ -80,22 +83,26 @@ while 5 > escolha > 0:
                print("Estoque: {0}, quantidade: {1}, preço unitário: {2}".format(k, estoque[k]["quantidade"],estoque[k]["preco_unitario"]))
            print (" ") 
        elif modalidade == "b"or modalidade == "B":
-           lista_negativos =[]
+           lista_negativos=[]
            for k in estoque:
                if estoque[k]["quantidade"] < 0:
                    lista_negativos.append([k,estoque[k]["quantidade"]])
                    print(" ")
                    print ("Os estoques negativos são:")
-                   for i in range(len(lista_negativos)):
-                       print ("Produto: {0}, Quantidade: {1}".format(lista_negativos[i][0], lista_negativos[i][1]))
-                   print(" ")
-            #colocar um print para quando não houver estoque negativo
+           if len(lista_negativos)==0:
+                print("\nNão há estoque negativo\n")
+           else:
+               for i in range(len(lista_negativos)):
+                   print ("Produto: {0}, Quantidade: {1}".format(lista_negativos[i][0], lista_negativos[i][1]))
+               print(" ")
+                   
        elif modalidade == "c" or modalidade =="C":
            contador = 0
            for k in estoque:
                if estoque[k]["quantidade"]>0:
                    contador+=estoque[k]["quantidade"]*estoque[k]["preco_unitario"]
                    #o total deu um float com varias casas decimais: como mudar isso?
+           contador=round(contador,2)
            print ("O valor monetário total em estoque é: {0}".format(contador))
            print(" ")
 if escolha == 0:
