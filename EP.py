@@ -12,6 +12,7 @@ with open ('estoque_python.txt', 'r') as arquivo:
     estoque=json.loads(arquivo.read())
 escolha=1
 while 5 > escolha > 0:
+    #cada a opcão zero?
    print ("Controle do Estoque:")
    print ("0 - sair ")
    print ("1 - adicionar item")
