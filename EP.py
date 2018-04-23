@@ -58,7 +58,7 @@ while 5 > escolha > 0:
                 elif alteracao == "b" or alteracao =="B":
                     preco_novo = float(input("Novo preço unitário: "))
                     if preco_novo > 0:
-                        estoque[produto]["preco_unitario"]+=preco_novo
+                        estoque[produto]["preco_unitario"]=preco_novo
                     else:
                         print ("Preço unitário não pode ser negativo.")
                 else:
@@ -101,9 +101,6 @@ while 5 > escolha > 0:
            contador=round(contador,2)
            print ("O valor monetário total em estoque é: {0}".format(contador))
            print(" ")
-   else: #incluir opção para quando o usuario dá enter sem ter numero  (evitar erro)
-        print("Não existe essa opção.")
-        escolha = 1 #para se manter no while
 if escolha == 0:
     print("Até mais")
 original = json.dumps(estoque, sort_keys=True, indent=4)

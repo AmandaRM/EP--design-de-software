@@ -1,6 +1,6 @@
 {
     "banana": {
-        "preco_unitario": 2.3,
+        "preco_unitario": 3.0999999999999996,
         "quantidade": 2
     },
     "tomato": {
