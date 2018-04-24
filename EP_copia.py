@@ -10,11 +10,9 @@ Created on Tue Apr 17 18:26:32 2018
 import json
 with open ('estoque_python.txt', 'r') as arquivo:
     estoque=json.loads(arquivo.read())
-escolha = int(input("Faça sua escolha: "))
-if escolha == 0:
-    print("Até mais")
-else:
-    while 5 > escolha and escolha != 0:
+
+escolha = 1
+while 5 > escolha and escolha == 0:
        print ("Controle do Estoque:")
        print ("0 - sair ")
        print ("1 - adicionar item")
@@ -103,10 +101,11 @@ else:
                contador=round(contador,2)
                print ("O valor monetário total em estoque é: {0}".format(contador))
                print(" ")
-       else: #incluir opção para quando o usuario dá enter sem ter numero  (evitar erro)
-            print("\nNão existe essa opção.\n")
-            escolha = 1 #para se manter no while
-
+           elif escolha < 5 and escolha != 0: #incluir opção para quando o usuario dá enter sem ter numero  (evitar erro)
+               print("\nNão existe essa opção.\n")
+               escolha = 1 #para se manter no while
+if escolha == 0:
+    print("Até mais")
 original = json.dumps(estoque, sort_keys=True, indent=4)
 with open ('estoque_python.txt', 'w') as arquivo:
     arquivo.write(original)

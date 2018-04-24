@@ -10,21 +10,18 @@ Created on Tue Apr 17 18:26:32 2018
 import json
 with open ('estoque_python.txt', 'r') as arquivo:
     estoque=json.loads(arquivo.read())
-escolha = int(input("Faça sua escolha: "))
-if escolha == 0:
-    print("Até mais")
-else:
-    while 5 > escolha and escolha != 0:
-       print ("Controle do Estoque:")
-       print ("0 - sair ")
-       print ("1 - adicionar item")
-       print ("2 - remover item")
-       print ("3 - alterar item")
-       print ("4 - imprimir estoque")
-       if escolha == 1:
-           produto = input("Nome do produto: ")
-           if produto in estoque:
-               print ("item já existente.")
+escolha = 1
+while 5 > escolha and escolha != 0:
+    print ("Controle do Estoque:")
+    print ("0 - sair ")
+    print ("1 - adicionar item")
+    print ("2 - remover item")
+    print ("3 - alterar item")
+    print ("4 - imprimir estoque")
+    if escolha == 1:
+        produto = input("Nome do produto: ")
+        if produto in estoque:
+              print ("item já existente.")
                print (" ")
            else:
                quantidade_inicial = int(input("Quantidade inicial: "))
