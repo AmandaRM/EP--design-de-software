@@ -40,6 +40,15 @@ while 5 > escolha and escolha != 0:
             if produto not in estoque:
                 print ("Elemento não encontrado")
             elif produto in estoque:
+<<<<<<< HEAD
+                if alteracao == "a" or alteracao == "A":
+                    quantidadeNova = int(input("Inclua quantidade: "))
+                    estoque[produto]["quantidade"]+=quantidadeNova
+                elif alteracao == "b" or alteracao =="B":
+                    preco_novo = float(input("Novo preço unitário: "))
+                    if preco_novo > 0:
+                        estoque[produto]["preco_unitario"]=preco_novo
+=======
                 del estoque[produto]
        elif escolha == 3:
             produto = input ("Nome do produto que deseja alterar: ")
@@ -60,6 +69,7 @@ while 5 > escolha and escolha != 0:
                             estoque[produto]["preco_unitario"]+=preco_novo
                         else:
                             print ("Preço unitário não pode ser negativo.")
+>>>>>>> dc8896502d883fb57de7eb4904ee4324bdbafc27
                     else:
                         print ("opção indisponível")
                 print ('Novo estoque de {0}: {1}'.format(produto, estoque[produto]))
@@ -100,10 +110,24 @@ while 5 > escolha and escolha != 0:
                contador=round(contador,2)
                print ("O valor monetário total em estoque é: {0}".format(contador))
                print(" ")
+<<<<<<< HEAD
+                   
+       elif modalidade == "c" or modalidade =="C":
+           contador = 0
+           for k in estoque:
+               if estoque[k]["quantidade"]>0:
+                   contador+=estoque[k]["quantidade"]*estoque[k]["preco_unitario"]
+           contador=round(contador,2)
+           print ("O valor monetário total em estoque é: {0}".format(contador))
+           print(" ")
+if escolha == 0:
+    print("Até mais")
+=======
        else: #incluir opção para quando o usuario dá enter sem ter numero  (evitar erro)
             print("\nNão existe essa opção.\n")
             escolha = 1 #para se manter no while
 
+>>>>>>> dc8896502d883fb57de7eb4904ee4324bdbafc27
 original = json.dumps(estoque, sort_keys=True, indent=4)
 with open ('estoque_python.txt', 'w') as arquivo:
     arquivo.write(original)
