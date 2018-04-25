@@ -23,7 +23,7 @@ while 3 > opcao >0:
         loja=input("Nome da loja: ")
         if opcao in arquivo:
             print('Loja já exxitente')
-        loja[estoque]={}
+        loja[estoque]=3
     elif opcao == 1:
         loja=input('Digite o nome da loja que quer acessar: ')
         if loja not in arquivo:
