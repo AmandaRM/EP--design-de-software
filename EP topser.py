@@ -24,17 +24,11 @@ while 4 > opcao >0:
     opcao=int(input("Selecione sua opção: "))
     if opcao == 2:
         loja=input("Nome da loja: ")
-<<<<<<< HEAD
-        if opcao in arquivo:
-            print('Loja já exxitente')
-        loja[estoque]=3
-=======
         if loja in estoque:
             print('Loja já existente! Tente novamente')
         else:
             estoque[loja]={}
             print ("\nloja adicionada\n")
->>>>>>> 355adc4e2d1817332370bba9c504902fd53ba43b
     elif opcao == 1:
         loja=input('Digite o nome da loja que quer acessar: ')
         if loja not in estoque:
