@@ -9,6 +9,7 @@ Created on Tue Apr 17 18:26:32 2018
 
 #========= fazendo o menu =========
 import json
+from firebase import Firebase
 with open ('geral.txt', 'r') as arquivo:
     estoque=json.loads(arquivo.read())
 
