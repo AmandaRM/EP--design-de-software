@@ -9,12 +9,12 @@ Created on Tue Apr 17 18:26:32 2018
 
 #========= fazendo o menu =========
 import json
-#from firebase import firebase
-#firebase = firebase.FirebaseApplication('https://epprojeto-51add.firebaseio.com/', None)
-#if firebase.get("dados", None) is None:
-    #estoque = {}
-#else:
-    #estoque = firebase.get("dados", None)
+from firebase import firebase
+firebase = firebase.FirebaseApplication('https://epprojeto-51add.firebaseio.com/', None)
+if firebase.get("dados", None) is None:
+    estoque = {}
+else:
+    estoque = firebase.get("dados", None)
     
 with open ('geral.txt', 'r') as arquivo:
     estoque=json.loads(arquivo.read())
@@ -177,7 +177,7 @@ original = json.dumps(estoque, sort_keys=True, indent=4)
 with open ('geral.txt', 'w') as arquivo:
     arquivo.write(original)
     
-#firebase.patch('https://epprojeto-51add.firebaseio.com/', estoque)    
+firebase.patch('https://epprojeto-51add.firebaseio.com/', estoque)    
     
     
         
