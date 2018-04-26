@@ -10,7 +10,8 @@ Created on Tue Apr 17 18:26:32 2018
 #========= fazendo o menu =========
 import json
 from firebase import firebase
-firebase = firebase.FirebaseApplication('https://epprojeto-51add.firebaseio.com/', None)
+
+firebase = firebase.FirebaseApplication('https://ep-estoque-em-nuvem.firebaseio.com/', None)
 if firebase.get("dados", None) is None:
     estoque = {}
 else:
@@ -175,9 +176,9 @@ if opcao ==0:
 
 original = json.dumps(estoque, sort_keys=True, indent=4)
 with open ('geral.txt', 'w') as arquivo:
-    arquivo.write(original)
+     arquivo.write(original)
     
-firebase.patch('https://epprojeto-51add.firebaseio.com/', estoque)    
+firebase.patch('https://ep-estoque-em-nuvem.firebaseio.com', estoque)    
     
     
         
